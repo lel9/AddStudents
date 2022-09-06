@@ -66,7 +66,7 @@ def write_all(student, mode, gl_fpass, rm_fpass, stud_res):
 def add_students(students, dout, mode, config):
     gl_passw_fname = 'gitlab_passw.csv'
     rm_passw_fname = 'redmine_passw.csv'
-    stud_res_fname = 'students1.csv'
+    stud_res_fname = 'students.csv'
     passw_len = 8
 
     try:
