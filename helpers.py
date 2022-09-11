@@ -80,13 +80,10 @@ def get_students(spath):
         for student in sfile.readlines():
             data = student.split('\t')
             name = data[name_id].strip().split(' ')
-            if len(name) == 3:
-                fname, lname = name[1] + ' ' + name[2], name[0]
-            elif len(name) == 2:
-                fname, lname = name[1], name[0]
+            if len(name) == 1:
+                fname, lname = '-', name[0]
             else:
-                print('Странное ФИО у студента: '+data[name_id].strip()+'не два или три слова, пропускаем...')
-                continue
+                fname, lname = ' '.join([x for x in name[1:] if len(x) > 0]), name[0]
             stud = data[stud_id].strip()
             email = data[email_id].strip()
             tg = -1
